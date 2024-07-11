@@ -19,7 +19,7 @@ I have personally developed the Python part of this project. For the web develop
 
 Linear regression is used in this project to establish a trend line for episode ratings across a season. By comparing each episode's rating to the predicted value on this trend line, we can identify episodes that stand out. These episodes are likely to be more enjoyable as they perform better than expected based on the overall trend.
 
-! [ALt text](/images/Figure_1.png)
+![ALt text](/images/Figure_1.png)
 
 ## How It Works
 
