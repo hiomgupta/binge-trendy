@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binge Trendy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto p-4">
+        <h1 class="text-4xl font-bold mb-4">Binge Trendy</h1>
+        <form method="POST" action="/">
+            <div class="mb-4">
+                <label for="url" class="block text-sm font-medium text-gray-700">IMDb URL:</label>
+                <input type="text" id="url" name="url" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required>
+            </div>
+            <div class="mb-4">
+                <label for="season" class="block text-sm font-medium text-gray-700">Season:</label>
+                <input type="text" id="season" name="season" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+            </div>
+            <div class="flex items-center mb-4">
+                <input type="checkbox" id="highest_residual" name="highest_residual" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                <label for="highest_residual" class="ml-2 block text-sm text-gray-900">Show episode with the highest residual</label>
+            </div>
+            <div class="flex items-center mb-4">
+                <input type="checkbox" id="top_ten" name="top_ten" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                <label for="top_ten" class="ml-2 block text-sm text-gray-900">Show top ten episodes</label>
+            </div>
+            <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Submit
+            </button>
+        </form>
+        {% if series_title %}
+        <div class="mt-6">
+            <h2 class="text-2xl font-bold">{{ series_title }}</h2>
+            <pre class="mt-4 p-4 bg-white rounded shadow-sm">{{ season_info }}</pre>
+            <h3 class="text-xl font-semibold mt-4">Highest Residual Episode</h3>
+            <pre class="mt-2 p-4 bg-white rounded shadow-sm">{{ highest_residual }}</pre>
+            <h3 class="text-xl font-semibold mt-4">Top Ten Episodes</h3>
+            <pre class="mt-2 p-4 bg-white rounded shadow-sm">{{ top_ten }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
